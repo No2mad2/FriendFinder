@@ -3,20 +3,15 @@ from random import randint
 
 auth = tweepy.OAuthHandler("xxx", "xxx")
 auth.set_access_token("xxx", "xxx")
-
 api = tweepy.API(auth)
 
-searches = api.search("searchterm", count=100)
-for tweet in searches:
+searches = api.search("searchterm", count=100)  #Replace searchterm with what
+for tweet in searches:                          #you want to search for
     timerand = (randint(60, 120))
     time.sleep(timerand)
     result = (randint(0,10))
     print(result)
     print (timerand)
-    #limits = api.rate_limit_status()
-    #remain_search_limits = limits['resources']['search']['/search/tweets']['remaining']
-    #print(remain_search_limits)
-    #print tweet.text.encode('utf8')
     print "Preparing to favorite"
     try:
         print "tweet id %s" % (tweet.id)
@@ -24,7 +19,7 @@ for tweet in searches:
         print "Successfully favorited!"
     except:
         pass
-
+    # Uncomment if you'd like to retweet randomly as well
     #if result == 1:
         #api.retweet(tweet.id)
         #print "Reweeted id %s" % (tweet.id)
