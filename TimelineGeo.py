@@ -13,9 +13,9 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-c = tweepy.Cursor(api.home_timeline).items() #Set up cursor
+c = tweepy.Cursor(api.home_timeline).items()
 
-def cata(wait = 10): # Different catalog function
+def cata(wait = 10):
     tweet = c.next()
     print ('@%s Location: %s %s Client: %s Created: %s %s\n' % (tweet.user.screen_name, str(tweet.geo), tweet.user.profile_image_url, tweet.source, tweet.created_at, tweet.text))
     wait = time.sleep(wait)
