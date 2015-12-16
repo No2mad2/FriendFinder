@@ -13,9 +13,8 @@ ACCESS_SECRET = 'xxx'
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
-#Authentication is out of the way
-#This app has read-only permission, as to not accidentally post or annoy anyone
-class StdOutListener(StreamListener):
+
+class StdOutListener(StreamListener): #Listens for new tweets that fit a list of keywords
 
     def on_data(self, data):
         # Twitter returns data in JSON format - we need to decode it first
