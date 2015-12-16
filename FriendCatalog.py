@@ -12,15 +12,13 @@ ACCESS_SECRET = 'xxx'
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)  
-#Authentication is out of the way
-c = tweepy.Cursor(api.search, q='searchterm', include_entities=True).items() #set cursor up
+
+c = tweepy.Cursor(api.search, q='searchterm', include_entities=True).items() #change searchterm
 
 # Catalog Function
 # Will slowly archive every tweet.
 # Might be dangerous on some users who have
 # very high tweet counts.
-# Bandwidth usage not calculated, but probably
-# negligible
 
 f = open('Text', 'a')
 
