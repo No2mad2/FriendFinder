@@ -14,6 +14,6 @@ auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
 try:
-    status = api.get_status (id=RANDOMNUMBERCHANGEME)
-    print status.geo
+    status = api.get_status (id='tweet_id_here')
+    print status.geo #Print exact geo coordinates, prints none if location not used
 except Exception,e: print str(e)
